@@ -113,12 +113,10 @@ const useCountUp = (props: UseCountUpProps): CountUpApi => {
   });
 
   const maybeInitialize = useEventCallback((shouldReset?: boolean) => {
-    if (startOnMount) {
-      if (shouldReset) {
-        reset();
-      }
-      start();
+    if (shouldReset) {
+      reset();
     }
+    start();
   });
 
   useEffect(() => {
